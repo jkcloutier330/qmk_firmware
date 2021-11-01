@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* key matrix size */
 #define MATRIX_ROWS 6
-#define MATRIX_COLS 21
+#define MATRIX_COLS 22
 
 /*
  * Keyboard Matrix Assignments
@@ -41,7 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 #define MATRIX_ROW_PINS { D33, D34, D35, D36, D37, D38 }
-#define MATRIX_COL_PINS { D39, D40, D41, D14, D15, D16, D17, D18, D19, D20, D21, D22, D23, D26, D0, D1, D2, D3, D4, D5, D6, D7, D8 }
+#define MATRIX_COL_PINS { D39, D40, D41, D14, D15, D16, D17, D18, D19, D20, D21, D22, D23, D0, D1, D2, D3, D4, D5, D6, D7, D8 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
@@ -56,24 +56,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 5
+/* Well-worn Cherry MX key switches can bounce for up to 20ms, despite the
+ * Cherry data sheet specifying 5ms. Because we use the sym_eager_pk debounce
+ * algorithm, this debounce latency only affects key releases (not key
+ * presses). */
+#undef DEBOUNCE
+#define DEBOUNCE 20
 
-/* define if matrix has ghost (lacks anti-ghosting diodes) */
-//#define MATRIX_HAS_GHOST
+// Reduce input latency by lowering the USB polling interval
+// from its 10ms default to the 125μs minimum that USB 2.x (High Speed) allows:
+#define USB_POLLING_INTERVAL_MS 1
 
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+/* We use the i.MX RT1060 high-speed GPIOs (GPIO6-9) which are connected to the
+ * AHB bus (AHB_CLK_ROOT), which runs at the same speed as the ARM Core Clock,
+ * i.e. 600 MHz. See MIMXRT1062, page 949, 12.1 Chip-specific GPIO information.
+ * No additional delay is necessary. */
 
-/* If defined, GRAVE_ESC will always act as ESC when CTRL is held.
- * This is useful for the Windows task manager shortcut (ctrl+shift+esc).
- */
-//#define GRAVE_ESC_CTRL_OVERRIDE
+// in clock cycles
+#define GPIO_INPUT_PIN_DELAY 0
 
 
-/* disable these deprecated features by default */
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+
+
+
 

@@ -1,8 +1,17 @@
 # MCU name
-MCU = atmega32u4
+MCU_FAMILY = MIMXRT1062
+MCU_SERIES = MIMXRT1062
+MCU_LDSCRIPT = MIMXRT1062
+MCU_STARTUP = MIMXRT1062
+BOARD = IC_TEENSY_4_1
+MCU  = cortex-m4
+ARMV = 7
+
+DEBOUNCE_TYPE = sym_eager_pk
 
 # Bootloader selection
 BOOTLOADER = halfkay
+FIRMWARE_FORMAT = hex
 
 # Build Options
 #   change yes to no to disable
