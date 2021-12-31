@@ -50,3 +50,7 @@ void matrix_output_unselect_delay(uint8_t line, bool key_pressed) {
     const uint32_t cycles_per_us = 600;
     delay_inline(10 * cycles_per_us);
 }
+
+bool encoder_update_kb(uint8_t index, bool clockwise) {
+    return encoder_update_user(index, clockwise);
+}

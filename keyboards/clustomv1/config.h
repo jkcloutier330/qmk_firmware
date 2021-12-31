@@ -48,11 +48,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DIODE_DIRECTION COL2ROW
 
 /* Encoders */
-/*
-#define ENCODERS_PAD_A {   }
-#define ENCODERS_PAD_B {   }
+
+#define ENCODERS_PAD_A { LINE_PIN26, LINE_PIN29  }
+#define ENCODERS_PAD_B { LINE_PIN27, LINE_PIN30  }
 #define ENCODER_RESOLUTION 4
-*/
+
 
 
 
