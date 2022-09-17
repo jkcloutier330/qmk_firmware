@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "matrix.h"
 #include "debounce.h"
 #include "quantum.h"
+#include "config.h"
 
 static const pin_t row_pins[] = MATRIX_ROW_PINS;
 static const pin_t col_pins[] = MATRIX_COL_PINS;
@@ -45,7 +46,7 @@ static matrix_row_t last_matrix[MATRIX_ROWS];  // raw values of last scan
     matrix_io_delay();
 
     // For each col...
-    for (uint8_t col_index = 0; col_index < MATRIX_COLS; col_index++) {
+    for (uint8_t col_index = 0; col_index < 10; col_index++) {
         // Select the col pin to read (active low)
         uint8_t pin_state = readPin(col_pins[col_index]);
 
@@ -103,7 +104,7 @@ static matrix_row_t last_matrix[MATRIX_ROWS];  // raw values of last scan
 }
 
  void unselect_cols(void) {
-    for (uint8_t x = 0; x < MATRIX_COLS; x++) {
+    for (uint8_t x = 0; x < 10; x++) {
         setPinInputHigh(col_pins[x]);
     }
 }
@@ -124,7 +125,7 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
         last_matrix[current_row] = current_matrix[current_row];
         read_cols_on_row(current_matrix, current_row);
     }
-    for (uint8_t current_col = 0; current_col < MATRIX_COLS; current_col++) {
+    for (uint8_t current_col = 0; current_col < 10; current_col++) {
         read_rows_on_col(current_matrix, current_col);
     }
     for (uint8_t current_row = 0; current_row < MATRIX_ROWS; current_row++) {

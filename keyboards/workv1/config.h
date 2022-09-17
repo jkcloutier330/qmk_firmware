@@ -14,7 +14,7 @@
 
 /* key matrix size */
 #define MATRIX_ROWS 6
-#define MATRIX_COLS 10
+#define MATRIX_COLS 19
 
 /* key matrix pins */
 #define MATRIX_ROW_PINS { A10, B5, B6, B7, B8, B9 }
