@@ -30,5 +30,6 @@
     },
     "cmake.configureOnOpen": true,
     "C_Cpp.intelliSenseMemoryLimit": 16384,
-    "C_Cpp.intelliSenseCacheSize": 0
+    "C_Cpp.intelliSenseCacheSize": 0,
+    "C_Cpp.errorSquiggles": "Enabled"
 }
