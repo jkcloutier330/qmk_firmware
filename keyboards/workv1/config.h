@@ -21,7 +21,7 @@
 #define MATRIX_COL_PINS { PA7, PA6, PA5, PA4, PA3, PA2, PA11, PA12, PA15, PB3 }
 
 /* COL2ROW or ROW2COL */
-//#define DIODE_DIRECTION CUSTOM_MATRIX
+#define DIODE_DIRECTION CUSTOM_MATRIX
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
