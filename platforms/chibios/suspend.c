@@ -13,6 +13,8 @@
 #include "led.h"
 #include "wait.h"
 
+#include "_wait.h"
+
 /** \brief suspend power down
  *
  * FIXME: needs doc

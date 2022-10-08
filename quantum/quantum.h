@@ -20,6 +20,8 @@
 #include "matrix.h"
 #include "keymap.h"
 
+#include "_wait.h"
+
 #ifdef BACKLIGHT_ENABLE
 #    include "backlight.h"
 #endif

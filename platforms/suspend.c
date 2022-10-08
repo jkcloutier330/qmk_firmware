@@ -4,6 +4,8 @@
 #include "suspend.h"
 #include "matrix.h"
 
+#include "_wait.h"
+
 // TODO: Move to more correct location
 __attribute__((weak)) void matrix_power_up(void) {}
 __attribute__((weak)) void matrix_power_down(void) {}

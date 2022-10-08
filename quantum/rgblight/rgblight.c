@@ -31,6 +31,8 @@
 #    include "velocikey.h"
 #endif
 
+#include "_wait.h"
+
 #ifndef MIN
 #    define MIN(a, b) (((a) < (b)) ? (a) : (b))
 #endif

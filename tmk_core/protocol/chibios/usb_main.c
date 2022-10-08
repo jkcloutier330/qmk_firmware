@@ -44,6 +44,8 @@
 #include "usb_descriptor.h"
 #include "usb_driver.h"
 
+#include "_wait.h"
+
 #ifdef NKRO_ENABLE
 #    include "keycode_config.h"
 

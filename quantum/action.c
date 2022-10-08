@@ -37,6 +37,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "wait.h"
 #include "keycode_config.h"
 
+#include "_wait.h"
+
 #ifdef BACKLIGHT_ENABLE
 #    include "backlight.h"
 #endif
